@@ -1,0 +1,15 @@
+APPLICATION_ID: demo
+service_description:
+  name: car
+  version: 1.0.0
+servicecomb:
+  service:
+    registry:
+      address: http://127.0.0.1:30100
+  rest:
+    address: 0.0.0.0:8082
+
+  handler:
+    chain:
+      Provider:
+        default: saga-provider

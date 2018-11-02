@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.huawei.demo</groupId>
+    <artifactId>saga</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>booking</module>
+        <module>car</module>
+        <module>hotel</module>
+    </modules>
+
+    <properties>
+        <servicecomb.version>1.1.0-SNAPSHOT</servicecomb.version>
+        <springboot.version>1.5.14.RELEASE</springboot.version>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.servicecomb</groupId>
+                <artifactId>java-chassis-dependencies</artifactId>
+                <version>${servicecomb.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--<dependency>
+                <groupId>com.huawei.paas.cse</groupId>
+                <artifactId>cse-dependency</artifactId>
+                <version>2.3.47</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>-->
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!--can use SpringApplication-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!--can use saga-->
+        <dependency>
+            <groupId>org.apache.servicecomb.saga</groupId>
+            <artifactId>omega-spring-starter</artifactId>
+            <version>0.3.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicecomb.saga</groupId>
+            <artifactId>omega-transport-resttemplate</artifactId>
+            <version>0.3.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--can use @EnableServiceComb-->
+        <dependency>
+            <groupId>org.apache.servicecomb</groupId>
+            <artifactId>spring-boot-starter-provider</artifactId>
+        </dependency>
+        <!--spring boot会检测validation-api的实现类，检测不到会无法启动-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--JDK版本-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
