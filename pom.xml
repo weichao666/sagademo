@@ -35,35 +35,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--<dependency>
-                <groupId>com.huawei.paas.cse</groupId>
-                <artifactId>cse-dependency</artifactId>
-                <version>2.3.47</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
-        <!--can use SpringApplication-->
+        <!--SpringApplication-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!--can use saga-->
-        <dependency>
-            <groupId>org.apache.servicecomb.saga</groupId>
-            <artifactId>omega-spring-starter</artifactId>
-            <version>0.3.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicecomb.saga</groupId>
-            <artifactId>omega-transport-resttemplate</artifactId>
-            <version>0.3.0-SNAPSHOT</version>
-        </dependency>
-
-        <!--can use @EnableServiceComb-->
+        <!--@EnableServiceComb-->
         <dependency>
             <groupId>org.apache.servicecomb</groupId>
             <artifactId>spring-boot-starter-provider</artifactId>
@@ -72,6 +53,17 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!--saga-->
+        <dependency>
+            <groupId>org.apache.servicecomb.saga</groupId>
+            <artifactId>omega-spring-starter</artifactId>
+            <version>0.3.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicecomb.saga</groupId>
+            <artifactId>omega-transport-servicecomb</artifactId>
+            <version>0.3.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
