@@ -12,4 +12,4 @@ servicecomb:
   handler:
     chain:
       Consumer:
-        default: loadbalance #,saga-consumer
+        default: loadbalance,saga-consumer

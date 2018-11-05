@@ -28,6 +28,7 @@ public class HotelBookingController {
         HotelBooking booking = new HotelBooking();
         booking.setId(id.incrementAndGet());
         booking.setName(name);
+        booking.setAmount(rooms);
         service.order(booking);
         return booking;
     }
